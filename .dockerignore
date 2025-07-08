@@ -1,0 +1,17 @@
+# Ignore the bin and obj folders, as they contain build artifacts
+bin/
+obj/
+
+# Ignore Dockerfile itself
+Dockerfile
+
+# Ignore .git folder and .gitignore file
+.git
+.gitignore
+
+# Ignore Visual Studio specific files
+*.suo
+*.user
+*.vspscc
+*.vssscc
+.vs/

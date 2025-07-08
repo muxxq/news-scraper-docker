@@ -1,0 +1,60 @@
+﻿@model List<string>
+
+@{
+    ViewData["Title"] = "Titluri Știri Scrape-uite";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Titluri de Știri</h1>
+    <p class="lead">Extrase de pe UCV ACE:</p>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        @if (Model != null && Model.Any())
+        {
+                <ul class="list-group">
+                @foreach (var title in Model)
+                {
+                            <li class="list-group-item list-group-item-action">
+                        @title
+                            </li>
+                }
+                </ul>
+        }
+        else
+        {
+                <div class="alert alert-warning" role="alert">
+                    Nu s-au putut prelua titluri de știri sau nu s-au găsit elemente corespunzătoare.
+                    Vă rugăm să verificați URL-ul și selectorul XPath în codul sursă.
+                </div>
+        }
+    </div>
+</div>
+
+<style>
+    /* Stiluri simple pentru a îmbunătăți aspectul */
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f8f9fa;
+    }
+    .display-4 {
+        color: #343a40;
+        margin-bottom: 20px;
+    }
+    .list-group-item {
+        border-radius: 8px;
+        margin-bottom: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        transition: transform 0.2s ease-in-out;
+        background-color: #ffffff;
+        color: #495057;
+    }
+    .list-group-item:hover {
+        transform: translateY(-3px);
+        background-color: #e9ecef;
+    }
+    .alert {
+        border-radius: 8px;
+    }
+</style>
